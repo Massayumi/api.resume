@@ -74,26 +74,24 @@
       <div class="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
         <!--Left Col-->
         <div class="flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left">
-          <p class="uppercase tracking-loose w-full">Ready to Automate Your Recruitment?</p>
-          <h1 class="my-4 text-5xl font-bold leading-tight">
-            Built for Recrutiers         
+          <p class="uppercase tracking-loose w-full text-lg">Ready to Automate Your Recruitment?</p>
+          <h1 class="my-4 text-6xl font-bold leading-tight">
+            Built for Recruiters         
           </h1>
-          <p class="leading-normal text-2xl mb-8">
+          <p class="leading-normal text-3xl mb-8">
             Test our API today and streamline your hiring process. Save time, reduce errors, and make better hiring decisions with automated resume processing and candidate matching.
-          </p>
           </p>
           <button class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out flex items-center gap-2">
             Start Your Free Trial
-            <svg class="h-10 w-10 fill-current text-gray-800 slide-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-              <path class="slide-6" fill="#0A0A30" fill-rule="evenodd" d="M13.155 16.834a.714.714 0 001.006-.091l3.564-4.277a.711.711 0 000-.932L14.16 7.257a.714.714 0 00-1.097.915l2.565 3.078H7.9a.75.75 0 000 1.5h7.73l-2.565 3.078a.714.714 0 00.091 1.006z" clip-rule="evenodd"/>
+            <svg class="h-8 w-8 fill-current text-gray-800 slide-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path fill="#0A0A30" fill-rule="evenodd" d="M13.155 16.834a.714.714 0 001.006-.091l3.564-4.277a.711.711 0 000-.932L14.16 7.257a.714.714 0 00-1.097.915l2.565 3.078H7.9a.75.75 0 000 1.5h7.73l-2.565 3.078a.714.714 0 00.091 1.006z" clip-rule="evenodd"/>
             </svg>
           </button>
-          
-          
         </div>
+    
         <!--Right Col-->
         <div class="w-full md:w-3/5 py-6 text-center">
-          <img class="w-full md:w-4/5 z-50" src="resume.png" />
+          <img class="w-4/5 z-50 mx-auto" src="{{ url_for('static', filename='resume.png') }}" />
         </div>
       </div>
     </div>
@@ -136,7 +134,7 @@
             </p>
           </div>
           <div class="w-full sm:w-1/2 p-6">
-          <img src="cv.png" alt="">
+            <img src="ai-generation.png" alt="AI Matching" />
           </div>
         </div>
         <div class="flex flex-wrap flex-col-reverse sm:flex-row">
@@ -166,7 +164,7 @@
             </p>
           </div>
           <div class="w-full sm:w-1/2 p-6 flex justify-center">
-            <img src="ai-generation.png" alt="AI Matching" class="max-h-56 w-auto object-contain" />
+            <img src="cv.png" alt="">
           </div>
         </div>
         
