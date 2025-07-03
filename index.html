@@ -173,7 +173,19 @@
       </div>
       <div class="flex flex-wrap flex-col-reverse sm:flex-row">
         <div class="w-full sm:w-1/2 p-6 mt-6">
-          <img src="vaga.png" alt="">
+          <!-- <img src="vaga.png" alt=""> -->
+            <div id="vaga" style="width: 400px; height: 400px;"></div>
+
+          <!-- Passo 3: Script que carrega o .json -->
+          <script>
+            lottie.loadAnimation({
+              container: document.getElementById('vaga'),
+              renderer: 'svg',
+              loop: true,
+              autoplay: true,
+              path: 'vaga.json'
+            });
+          </script>
         </div>
         <div class="w-full sm:w-1/2 p-6 mt-6">
           <div class="align-middle">
