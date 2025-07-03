@@ -8,6 +8,7 @@
   <title>
     Scorpion Resume Parser
   </title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js"></script>
   <meta name="description" content="Simple landind page" />
   <meta name="keywords" content="" />
   <meta name="author" content="Scorpion Circle" />
@@ -152,10 +153,22 @@
         </div>
         <div class="w-full sm:w-1/2 p-6">
           <!-- <img src="ai-generation.png" alt="AI Matching" /> -->
-          <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
+          <!-- <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
             type="module"></script>
           <dotlottie-player src="https://lottie.host/d22d81b7-9892-4110-b8a2-b282b9b6fbc6/F4q8Z3eDQ0.lottie"
-            background="transparent" speed="1" style="width: 300px; height: 300px" loop autoplay></dotlottie-player>
+            background="transparent" speed="1" style="width: 300px; height: 300px" loop autoplay></dotlottie-player> -->
+             <div id="cv" style="width: 400px; height: 400px;"></div>
+
+          <!-- Passo 3: Script que carrega o .json -->
+          <script>
+            lottie.loadAnimation({
+              container: document.getElementById('cv'),
+              renderer: 'svg',
+              loop: true,
+              autoplay: true,
+              path: 'cv.json' 
+            });
+          </script>
         </div>
       </div>
       <div class="flex flex-wrap flex-col-reverse sm:flex-row">
@@ -187,10 +200,22 @@
         </div>
         <div class="w-full sm:w-1/2 flex justify-center">
           <!-- <img src="cv.png" alt=""> -->
-          <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
+          <!-- <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
             type="module"></script>
           <dotlottie-player src="https://lottie.host/f2e93e11-2ec5-4b8d-9944-3eeaaaaa9ac6/4yj1burZDi.lottie"
-            background="transparent" speed="1" style="width: 400px; height: 400px" loop autoplay></dotlottie-player>
+            background="transparent" speed="1" style="width: 400px; height: 400px" loop autoplay></dotlottie-player> -->
+          <div id="lottie-animation" style="width: 400px; height: 400px;"></div>
+
+          <!-- Passo 3: Script que carrega o .json -->
+          <script>
+            lottie.loadAnimation({
+              container: document.getElementById('lottie-animation'),
+              renderer: 'svg',
+              loop: true,
+              autoplay: true,
+              path: 'match.json'
+            });
+          </script>
         </div>
       </div>
 
