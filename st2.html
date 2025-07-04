@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>
+    Scorpion Resume Parser
+  </title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js"></script>
+  <meta name="description" content="Simple landind page" />
+  <meta name="keywords" content="" />
+  <meta name="author" content="Scorpion Circle" />
+  <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" />
+  <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" />
+  <link rel="stylesheet" href="https://lottie.host/cf55c155-dca4-4c95-bdca-8df0cfaebf51/HaA0XIYLC7.lottie">
+  <!-- Define your gradient here - use online tools to find a gradient matching your branding-->
+  <style>
+    .gradient {
+      background: linear-gradient(90deg, #3b3b3b 0%, #b91c1c 100%);
+    }
+
+    .slide-6 {
+      animation: slide-6 1s infinite alternate both cubic-bezier(1, -0.01, 0, 0.98);
+    }
+
+    @keyframes slide-6 {
+      100% {
+        transform: translateX(2px);
+      }
+    }
+  </style>
+
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Theme Check and Update -->
+  <script>
+    const html = document.querySelector('html');
+    const isLightOrAuto = localStorage.getItem('hs_theme') === 'light' || (localStorage.getItem('hs_theme') === 'auto' && !window.matchMedia('(prefers-color-scheme: dark)').matches);
+    const isDarkOrAuto = localStorage.getItem('hs_theme') === 'dark' || (localStorage.getItem('hs_theme') === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+    if (isLightOrAuto && html.classList.contains('dark')) html.classList.remove('dark');
+    else if (isDarkOrAuto && html.classList.contains('light')) html.classList.remove('light');
+    else if (isDarkOrAuto && !html.classList.contains('dark')) html.classList.add('dark');
+    else if (isLightOrAuto && !html.classList.contains('light')) html.classList.add('light');
+  </script>
+
+  <!-- CSS HS -->
+  <link rel="stylesheet" href="https://preline.co/assets/css/main.css?v=3.1.0">
+</head>
+
+<body class="leading-normal tracking-normal text-white" style="font-family: 'Source Sans Pro', sans-serif;">
+  <!-- ========== HEADER ========== -->
+
+  <nav id="header" class="fixed w-full z-30 top-0 text-white">
+    <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
+      <div class="pl-4 flex items-center">
+        <a class="toggleColour text-white no-underline hover:no-underline font-bold text-2xl lg:text-4xl " href="#">
+          <!--Icon from: http://www.potlabicons.com/ -->
+
+          <img class="h-10 w-auto" src="scorpion.png" alt="logo">
+        </a>
+      </div>
+      <div class="block lg:hidden pr-4">
+        <button id="nav-toggle"
+          class="flex items-center p-1 text-pink-800 hover:text-gray-900 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+          <svg class="fill-current h-6 w-6" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <title>Menu</title>
+            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+          </svg>
+        </button>
+      </div>
+      <div
+        class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden mt-2 lg:mt-0 bg-white lg:bg-transparent text-black p-4 lg:p-0 z-20"
+        id="nav-content">
+        <ul class="list-reset lg:flex justify-end flex-1 items-center">
+          <li class="mr-3">
+            <a class="inline-block py-2 px-4 text-black font-bold no-underline" href="ai-chat1.html">Getting
+              Started</a>
+          </li>
+          <li class="mr-3">
+            <a class="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
+              href="st2.html">Getting Started 2</a>
+          </li>
+          <li class="mr-3">
+            <a class="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
+              href="#">link</a>
+          </li>
+        </ul>
+        <button id="navAction"
+          class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+          Action
+        </button>
+      </div>
+    </div>
+    <hr class="border-b border-gray-100 opacity-25 my-0 py-0" />
+  </nav>
+
+  <!-- ========== END HEADER ========== -->
+
+  <!-- ========== MAIN CONTENT ========== -->
+  <main id="content">
+    <div class="w-full max-w-2xl mx-auto">
+      <!-- AI Recruitment Guide -->
+      <div class="mt-10 sm:mt-14">
+        <h1 class="mb-5 font-bold text-gray-800 dark:text-neutral-200">
+          How to Use the AI Recruitment Module
+        </h1>
+
+        <div class="space-y-6 text-sm text-gray-700 dark:text-neutral-300">
+          <!-- Step 1 -->
+          <div>
+            <h3 class="font-semibold text-gray-900 dark:text-white">📦 Step 1 – Install the Module
+            </h3>
+            <p class="mt-2">
+              Unzip the downloaded file. You will find:
+            <ul class="list-disc ml-5">
+              <li><code>how-to-use.html</code> – this guide you're reading now</li>
+              <li><code>module.zip</code> – the actual module to upload</li>
+            </ul>
+            Go to your CRM
+            <svg class="inline w-3 h-3 mx-1 align-middle text-gray-800 dark:text-white" aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M1 5h12m0 0L9 1m4 4L9 9" />
+            </svg>
+            Modules
+            <svg class="inline w-3 h-3 mx-1 align-middle text-gray-800 dark:text-white" aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M1 5h12m0 0L9 1m4 4L9 9" />
+            </svg>
+            Upload Module, select <code>module.zip</code> and click <strong>Install</strong>.
+            Then activate it from the list.
+            </p>
+          </div>
+
+          <!-- Step 2 -->
+          <div>
+            <h3 class="font-semibold text-gray-900 dark:text-white">⚙️ Step 2 – Configure Settings</h3>
+            <p class="mt-2">
+              Go to <code>Settings</code>
+              <svg class="inline w-3 h-3 mx-1 align-middle text-gray-800 dark:text-white" aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M1 5h12m0 0L9 1m4 4L9 9" />
+              </svg>
+              <code>Settings</code>
+              <svg class="inline w-3 h-3 mx-1 align-middle text-gray-800 dark:text-white" aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M1 5h12m0 0L9 1m4 4L9 9" />
+              </svg>
+              <code>RH</code> and enter your token key if required. Then go to <code>Modules</code>
+              <svg class="inline w-3 h-3 mx-1 align-middle text-gray-800 dark:text-white" aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M1 5h12m0 0L9 1m4 4L9 9" />
+              </svg>
+              <code>RH</code>
+              <svg class="inline w-3 h-3 mx-1 align-middle text-gray-800 dark:text-white" aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M1 5h12m0 0L9 1m4 4L9 9" />
+              </svg>
+              <code>RH Assistant</code> to create an assistant.
+            </p>
+          </div>
+
+          <!-- Step 3 -->
+          <div>
+            <h3 class="font-semibold text-gray-900 dark:text-white">🤖 Step 3 – Create Your Assistante</h3>
+            <p class="mt-2">
+              Click <strong>New Assistant</strong>. Choose whether the assistant is for:
+            <ul class="list-disc ml-5">
+              <li>CV Parsing</li>
+              <li>Job Matching</li>
+              <li>Listing Analysis</li>
+            </ul>
+            Write a prompt or click the "Generate Instruction" button.
+            </p>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="mt-10 sm:mt-14">
+            <h1 class="mb-5 font-bold text-gray-800 dark:text-neutral-200">
+              How to Add Candidates and Jobs
+            </h1>
+
+            <div class="space-y-6 text-sm text-gray-700 dark:text-neutral-300">
+
+              <!-- Add Candidate -->
+              <div>
+                <h3 class="font-semibold text-gray-900 dark:text-white">👤 Adding a Candidate</h3>
+                <p class="mt-2">
+                  You can register a candidate in two ways:
+                </p>
+                <ul class="list-disc ml-5 mt-2">
+                  <li>
+                    <strong>Upload:</strong> Go to <code>RH 
+                   <svg class="inline w-3 h-3 mx-1 align-middle text-gray-800 dark:text-white" aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M1 5h12m0 0L9 1m4 4L9 9" />
+                    </svg>
+                   Send CV</code>.
+                    Upload a resume (PDF) exported from LinkedIn or similar. The system will automatically
+                    extract the candidate’s data
+                    using AI.
+                  </li>
+                  <li class="mt-2">
+                    <strong>Manual Entry:</strong> Go to <code>RH 
+                      <svg class="inline w-3 h-3 mx-1 align-middle text-gray-800 dark:text-white" aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M1 5h12m0 0L9 1m4 4L9 9" />
+                      </svg>
+                      Candidates or Send CV</code>. Then, click the <strong>three-dot menu</strong> (︙) in the
+                    top-right corner and select
+                    <strong>New Candidate</strong>.
+                    Fill out the form manually with the candidate’s details.
+                  </li>
+
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Add Job -->
+              <div>
+                <h3 class="font-semibold text-gray-900 dark:text-white">📄 Adding a Job Listing</h3>
+                <p class="mt-2">
+                  You can also register jobs in two ways:
+                </p>
+                <ul class="list-disc ml-5 mt-2">
+                  <li>
+                    <strong>Automatic Processing:</strong> Go to <code>RH 
+                   <svg class="inline w-3 h-3 mx-1 align-middle text-gray-800 dark:text-white" aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M1 5h12m0 0L9 1m4 4L9 9" />
+                  </svg>
+                  Job Listings</code> and click <strong>New Job</strong>. To use AI, simply paste the full job
+                    description into the <code>Description</code> field.
+                    Then, set the weights for <strong>Skills</strong> and <strong>Languages</strong> accordingly and
+                    click <strong>Save</strong>.
+                    The system will automatically analyze the text and extract the key requirements.
+                  </li>
+                  <li class="mt-2">
+                    <strong>Manual Entry:</strong> To create the job listing manually, fill in all fields of the form 
+                    and click <strong>Save</strong>.
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Match System -->
+              <div>
+                <h1 class="font-bold text-gray-900 dark:text-white">🧠 How Matching Works</h1>
+                <p class="mt-2">
+                  After adding candidates and jobs, the system can automatically calculate compatibility between them.
+                </p>
+                <p class="mt-2">
+                  Here’s how it works:
+                </p>
+                <ul class="list-disc ml-5 mt-2">
+  
+                  <li>
+                    It evaluates <strong>skills</strong>, <strong>languages</strong>, and <strong>experience</strong>
+                    using
+                    weights you define (e.g. 70% skill, 30% language).
+                  </li>
+                  <li>
+                    A score is generated based on compatibility. You can view all matches in the <code>Matches</code>
+                    section under the module.
+                  </li>
+                </ul>
+                <p class="mt-2">
+                  The higher the score, the better the fit between candidate and job.
+                </p>
+              </div>
+
+              <!-- Final Note -->
+              <div>
+                <h3 class="font-semibold text-gray-900 dark:text-white">📊 Where to View Matches</h3>
+                <p class="mt-2">
+                  Go to <code>RH &gt; Matches</code> to explore the list of candidates matched to job listings.
+                  You’ll see the best matches at the top, along with compatibility percentage and breakdown.
+                </p>
+                <p class="mt-2">
+                  You can click on any match to see detailed info including matched skills and language levels.
+                </p>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Step 5 -->
+          <div>
+            <h3 class="font-semibold text-gray-900 dark:text-white">✅ Done!</h3>
+            <p class="mt-2">
+              The system will process the resume in the background. You can view results in the
+              matches section.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- End Guide -->
+      <!-- Candidates and Jobs Section -->
+    
+    </div>
+  </main>
+  <!-- ========== END MAIN CONTENT ========== -->
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="w-full max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="py-6 border-t border-gray-200 dark:border-neutral-700">
+      <div class="flex flex-wrap justify-between items-center gap-2">
+        <div>
+          <p class="text-xs text-gray-600 dark:text-neutral-400">
+            © 2025 Preline Labs.
+          </p>
+        </div>
+        <!-- End Col -->
+
+        <!-- List -->
+        <ul class="flex flex-wrap items-center">
+          <li
+            class="inline-block relative pe-4 text-xs last:pe-0 last-of-type:before:hidden before:absolute before:top-1/2 before:end-1.5 before:-translate-y-1/2 before:size-[3px] before:rounded-full before:bg-gray-400 dark:text-neutral-500 dark:before:bg-neutral-600">
+            <a class="text-xs text-gray-500 underline hover:text-gray-800 hover:decoration-2 focus:outline-hidden focus:decoration-2 dark:text-neutral-500 dark:hover:text-neutral-400"
+              href="#">
+              X (Twitter)
+            </a>
+          </li>
+          <li
+            class="inline-block relative pe-4 text-xs last:pe-0 last-of-type:before:hidden before:absolute before:top-1/2 before:end-1.5 before:-translate-y-1/2 before:size-[3px] before:rounded-full before:bg-gray-400 dark:text-neutral-500 dark:before:bg-neutral-600">
+            <a class="text-xs text-gray-500 underline hover:text-gray-800 hover:decoration-2 focus:outline-hidden focus:decoration-2 dark:text-neutral-500 dark:hover:text-neutral-400"
+              href="#">
+              Dribbble
+            </a>
+          </li>
+          <li class="inline-block pe-4 text-xs">
+            <a class="text-xs text-gray-500 underline hover:text-gray-800 hover:decoration-2 focus:outline-hidden focus:decoration-2 dark:text-neutral-500 dark:hover:text-neutral-400"
+              href="#">
+              Github
+            </a>
+          </li>
+          <li class="inline-block">
+            <!-- Dark Mode -->
+            <button type="button"
+              class="hs-dark-mode hs-dark-mode-active:hidden relative flex justify-center items-center size-7 border border-gray-200 text-gray-500 rounded-full hover:bg-gray-200 focus:outline-hidden focus:bg-gray-200 dark:border-neutral-700 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
+              data-hs-theme-click-value="dark">
+              <span class="sr-only">Dark</span>
+              <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+              </svg>
+            </button>
+            <button type="button"
+              class="hs-dark-mode hs-dark-mode-active:flex hidden relative flex justify-center items-center size-7 border border-gray-200 text-gray-500 rounded-full hover:bg-gray-200 focus:outline-hidden focus:bg-gray-200 dark:border-neutral-700 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
+              data-hs-theme-click-value="light">
+              <span class="sr-only">Light</span>
+              <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <circle cx="12" cy="12" r="4"></circle>
+                <path d="M12 2v2"></path>
+                <path d="M12 20v2"></path>
+                <path d="m4.93 4.93 1.41 1.41"></path>
+                <path d="m17.66 17.66 1.41 1.41"></path>
+                <path d="M2 12h2"></path>
+                <path d="M20 12h2"></path>
+                <path d="m6.34 17.66-1.41 1.41"></path>
+                <path d="m19.07 4.93-1.41 1.41"></path>
+              </svg>
+            </button>
+            <!-- End Dark Mode -->
+          </li>
+        </ul>
+        <!-- End List -->
+      </div>
+    </div>
+  </footer>
+  <!-- ========== END FOOTER ========== -->
+
+  <!-- JS Implementing Plugins -->
+
+  <!-- JS PLUGINS -->
+  <!-- Required plugins -->
+  <script src="https://cdn.jsdelivr.net/npm/preline/dist/index.js"></script>
+
+  <!-- JS THIRD PARTY PLUGINS -->
+  <!-- Google Analytics. Global site tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-B73TDMXKF5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'G-B73TDMXKF5');
+  </script>
+</body>
+
+</html>

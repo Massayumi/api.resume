@@ -63,7 +63,7 @@
           </li>
           <li class="mr-3">
             <a class="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
-              href="ai-chat.html">Getting Started 2</a>
+              href="st2.html">Getting Started 2</a>
           </li>
           <li class="mr-3">
             <a class="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
@@ -157,7 +157,7 @@
             type="module"></script>
           <dotlottie-player src="https://lottie.host/d22d81b7-9892-4110-b8a2-b282b9b6fbc6/F4q8Z3eDQ0.lottie"
             background="transparent" speed="1" style="width: 300px; height: 300px" loop autoplay></dotlottie-player> -->
-             <div id="cv" style="width: 300px; height: 300px;"></div>
+          <div id="cv" style="width: 300px; height: 300px;"></div>
 
           <!-- Passo 3: Script que carrega o .json -->
           <script>
@@ -166,7 +166,7 @@
               renderer: 'svg',
               loop: true,
               autoplay: true,
-              path: 'cv.json' 
+              path: 'cv.json'
             });
           </script>
         </div>
@@ -174,7 +174,7 @@
       <div class="flex flex-wrap flex-col-reverse sm:flex-row">
         <div class="w-full sm:w-1/2 p-6 mt-6">
           <!-- <img src="vaga.png" alt=""> -->
-            <div id="vaga" style="width: 400px; height: 400px;"></div>
+          <div id="vaga" style="width: 400px; height: 400px;"></div>
 
           <!-- Passo 3: Script que carrega o .json -->
           <script>
@@ -436,7 +436,7 @@
   <!--Footer-->
   <footer class="bg-white">
     <div class="container mx-auto px-8">
-      <div class="w-full flex flex-col md:flex-row py-6">
+      <div class="w-full flex flex-col md:flex-row py-7">
         <div class="flex-1 mb-6 text-black">
           <a class="text-pink-600 no-underline hover:no-underline font-bold text-2xl lg:text-4xl" href="#">
             <!--Icon from: http://www.potlabicons.com/ -->
@@ -460,12 +460,26 @@
         <div class="flex-1">
           <p class="uppercase text-gray-500 md:mb-6">Legal</p>
           <ul class="list-reset mb-6">
+            <li class="mt-2 inline-block mr-2 md:block md:mr-0 relative group">
+              <a href="#" class="no-underline text-gray-800 hover:text-pink-500">
+                License
+              </a>
+              <!-- Tooltip -->
+              <div
+                class="absolute left-0 mt-1 w-48 bg-gray-800 text-white text-sm rounded-lg px-3 py-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+                Este projeto utiliza templates com as seguintes licenças:
+                - Template da ThemeWagon sob licença MIT:
+                - Template Preline UI sob licença MIT + Fair Use:
+              </div>
+            </li>
+
             <li class="mt-2 inline-block mr-2 md:block md:mr-0">
               <a href="#" class="no-underline hover:underline text-gray-800 hover:text-pink-500">Terms</a>
             </li>
             <li class="mt-2 inline-block mr-2 md:block md:mr-0">
               <a href="#" class="no-underline hover:underline text-gray-800 hover:text-pink-500">Privacy</a>
             </li>
+
           </ul>
         </div>
         <div class="flex-1">
